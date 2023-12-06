@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="form.css">
+    <script> function validateForm() {
+            var x = document.forms["myForm"]["name"].value; if (x == "") { alert("Name must be filled out"); return false; }
+            var x = document.forms["myForm"]["email"].value; var atpos = x.indexOf("@"); var dotpos = x.lastIndexOf("."); if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length) { alert("Not a valid e-mail address"); return false; }
+            var x = document.forms["myForm"]["id"].value; if (x == "") { alert("ID must be filled out"); return false; }
+            var x = document.forms["myForm"]["vehicle_no"].value; if (x == "") { alert("Vehicle no must be filled out"); return false; }
+            var x = document.forms["myForm"]["chess_no"].value; if (x == "") { alert("Chess no must be filled out"); return false; }
+            var x = document.forms["myForm"]["photo"].value; if (x == "") { alert("Photo must be filled out"); return false; }
+            var x = document.forms["myForm"]["nid"].value; if (x == "") { alert("NID must be filled out"); return false; }
+            var x = document.forms["myForm"]["present_address"].value; if (x == "") { alert("Present address must be filled out"); return false; }
+        } </script>
+
+</head>
+
+<body>
+    <header>
+        <span>BRTA Website</span>
+        <nav>
+            <a href="Home.html">Home</a>
+            <a href="form.html">License Application Form</a>
+            <a href="login.html">Login</a>
+            <a href="location.html">Location</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Registration Form</h2>
+        <b><b>
+
+                <form name="myForm" action="assets/php/formValidation.php" onsubmit="return validateForm()"
+                    method="post" enctype="multipart/form-data">
+                    Name: <input type="text" name="name" required> <br>
+                    Email: <input type="email" name="email" required> <br>
+                    ID: <input type="number" name="id" required> <br><br>
+                    Vehicle no: <input type="text" name="vehicle_no" required> <br>
+                    Chess no: <input type="text" name="chess_no" required> <br>
+                    Passport size photo: <input type="file" name="photo" required> <br>
+                    NID soft copy: <input type="file" name="nid" required> <br>
+                    Present address: <textarea name="present_address" required></textarea>
+
+                    <br><br><br>
+                    <input type="submit" value="Submit">
+                </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+CREATE DATABASE brta_database;
+
+USE brta_database;
+
+CREATE TABLE Applicants (
+    id_number INT(20) PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    vehicle_number VARCHAR(20) NOT NULL,
+    chess_number VARCHAR(20) NOT NULL,
+    photo VARCHAR(255) NOT NULL,
+    nid_copy VARCHAR(255) NOT NULL,
+    present_address TEXT NOT NULL
+);
+
+CREATE TABLE `subscribers` (
+  `email` varchar(30) PRIMARY KEY
+);
+
+
+CREATE TABLE `Admin` (
+  `username` varchar(30) PRIMARY KEY,
+  `password` varchar(30) NOT NULL
+);
+
+INSERT INTO `admin` (`username`, `password`) VALUES ('zami', '1234');
